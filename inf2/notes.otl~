@@ -1,0 +1,26 @@
+global:
+	2017-02-20 
+		3 test de 2 periodes
+		ensi.heig-vd.ch
+
+slides :
+	2017-02-20 
+		POO
+		déclarer une classe:
+			class NomDeLaClasse
+			{
+				public:
+				//~~~~~~~~~~
+				private:
+				//~~~~~~~~~~
+			};
+
+		dire au compilateur qu'on va pas modifier un objet depuis un méthode:
+		class Rectangle {
+			public:
+				void setDims(double, double);
+				double surface() const; //dis au compilateur qu'on va passer au const.
+			private:
+				double largeur;
+				double longueur;
+			};

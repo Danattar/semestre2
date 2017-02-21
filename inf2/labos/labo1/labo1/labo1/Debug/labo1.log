@@ -1,0 +1,22 @@
+﻿  main.cpp
+main.obj : error LNK2005: "public: void __thiscall Carre::details(void)const " (?details@Carre@@QBEXXZ) already defined in Carre.obj
+main.obj : error LNK2005: "public: void __thiscall Cercle::details(void)const " (?details@Cercle@@QBEXXZ) already defined in Cercle.obj
+main.obj : error LNK2005: "public: double __thiscall Carre::getCote(void)const " (?getCote@Carre@@QBENXZ) already defined in Carre.obj
+main.obj : error LNK2005: "public: double __thiscall Cercle::getRayon(void)const " (?getRayon@Cercle@@QBENXZ) already defined in Cercle.obj
+main.obj : error LNK2005: "public: void __thiscall Carre::setCote(double)" (?setCote@Carre@@QAEXN@Z) already defined in Carre.obj
+main.obj : error LNK2005: "public: void __thiscall Cercle::setRayon(double)" (?setRayon@Cercle@@QAEXN@Z) already defined in Cercle.obj
+main.obj : error LNK2005: "public: double __thiscall Carre::surface(void)const " (?surface@Carre@@QBENXZ) already defined in Carre.obj
+main.obj : error LNK2005: "public: double __thiscall Cercle::surface(void)const " (?surface@Cercle@@QBENXZ) already defined in Cercle.obj
+Rectangle.obj : error LNK2005: "public: void __thiscall Rectangle::details(void)const " (?details@Rectangle@@QBEXXZ) already defined in main.obj
+Rectangle.obj : error LNK2005: "public: double __thiscall Rectangle::getLargeur(void)const " (?getLargeur@Rectangle@@QBENXZ) already defined in main.obj
+Rectangle.obj : error LNK2005: "public: double __thiscall Rectangle::getLongueur(void)const " (?getLongueur@Rectangle@@QBENXZ) already defined in main.obj
+Rectangle.obj : error LNK2005: "public: void __thiscall Rectangle::setLargeur(double)" (?setLargeur@Rectangle@@QAEXN@Z) already defined in main.obj
+Rectangle.obj : error LNK2005: "public: void __thiscall Rectangle::setLongueur(double)" (?setLongueur@Rectangle@@QAEXN@Z) already defined in main.obj
+Rectangle.obj : error LNK2005: "public: double __thiscall Rectangle::surface(void)const " (?surface@Rectangle@@QBENXZ) already defined in main.obj
+Triangle.obj : error LNK2005: "public: void __thiscall Triangle::details(void)const " (?details@Triangle@@QBEXXZ) already defined in main.obj
+Triangle.obj : error LNK2005: "public: double __thiscall Triangle::getBase(void)const " (?getBase@Triangle@@QBENXZ) already defined in main.obj
+Triangle.obj : error LNK2005: "public: double __thiscall Triangle::getHauteur(void)const " (?getHauteur@Triangle@@QBENXZ) already defined in main.obj
+Triangle.obj : error LNK2005: "public: void __thiscall Triangle::setBase(double)" (?setBase@Triangle@@QAEXN@Z) already defined in main.obj
+Triangle.obj : error LNK2005: "public: void __thiscall Triangle::setHauteur(double)" (?setHauteur@Triangle@@QAEXN@Z) already defined in main.obj
+Triangle.obj : error LNK2005: "public: double __thiscall Triangle::surface(void)const " (?surface@Triangle@@QBENXZ) already defined in main.obj
+C:\heig-vd\semestre2\inf2\labos\labo1\labo1\Debug\labo1.exe : fatal error LNK1169: one or more multiply defined symbols found
