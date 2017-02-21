@@ -1,4 +1,9 @@
-#include "main.h"
+#include "Carre.h"
+#include "Cercle.h"
+#include "Rectangle.h"
+#include "Triangle.h"
+#include <cstdlib>
+
 using namespace std;
 
 int main() {
@@ -20,5 +25,7 @@ int main() {
 	triangle.setBase(13);
 	triangle.setHauteur(15);
 	triangle.details();
+
+	system("PAUSE");
 	return 0;
 }
