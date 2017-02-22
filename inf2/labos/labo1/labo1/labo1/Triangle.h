@@ -5,17 +5,16 @@ using namespace std;
 
 class Triangle {
 public:
-	// spécifie les dimensions du Triangle
-	void setBase(double);
-	void setHauteur(double);
+	Triangle();
+	Triangle(double base, double hauteur);
+	void setBase(const double);
+	void setHauteur(const double);
 	double getBase() const;
 	double getHauteur() const;
-	// calcule et renvoie la surface du Triangle
 	double surface() const;
 	void details() const;
 
 private:
-	// stocke les dimensions
 	double base;
 	double hauteur;
 };

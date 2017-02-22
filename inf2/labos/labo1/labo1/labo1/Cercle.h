@@ -5,15 +5,14 @@ using namespace std;
 
 class Cercle {
 public:
-	// spécifie les dimensions du rectangle
-	void setRayon(double);
+	Cercle();
+	Cercle(double rayon);
+	void setRayon(const double);
 	double getRayon() const;
-	// calcule et renvoie la surface du rectangle
 	double surface() const;
 	void details() const;
 
 private:
-	// stocke les dimensions
 	double rayon;
 };
 

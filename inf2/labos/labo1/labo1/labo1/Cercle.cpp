@@ -1,8 +1,15 @@
 #include "Cercle.h"
 #include <iostream>
 
+Cercle::Cercle()
+	: rayon(.0)
+{}
 
-void Cercle::setRayon(double rayon) {
+Cercle::Cercle(double rayon)
+	: rayon(rayon)
+{}
+
+void Cercle::setRayon(const double rayon) {
 	if (rayon > 0) {
 		this->rayon = rayon;
 	}
@@ -14,6 +21,6 @@ double Cercle::surface() const {
 	return 3.141592653581 * rayon * rayon;
 }
 void Cercle::details() const {
-	cout << "Rayon = " << getRayon() << endl
-		<< "Surface = " << surface() << endl;
+	cout << "--- CERCLE ---" << endl
+		<< "Rayon: " << getRayon() << endl;
 }

@@ -1,13 +1,20 @@
 #include "Triangle.h"
 #include <iostream>
 
+Triangle::Triangle()
+	: base(.0), hauteur(.0)
+{}
 
-void Triangle::setBase(double base) {
+Triangle::Triangle(double base, double hauteur)
+	: base(base), hauteur(hauteur)
+{}
+
+void Triangle::setBase(const double base) {
 	if (base > 0) {
 		this->base = base;
 	}
 }
-void Triangle::setHauteur(double hauteur) {
+void Triangle::setHauteur(const double hauteur) {
 	if (hauteur > 0) {
 		this->hauteur = hauteur;
 	}
@@ -22,7 +29,7 @@ double Triangle::surface() const {
 	return (base * hauteur)/2;
 }
 void Triangle::details() const {
-	cout << "Base = " << getBase() << endl
-		<< "Hauteur = " << getHauteur() << endl
-		<< "Surface = " << surface() << endl;
+	cout << "--- TRIANGLE ---" << endl
+		<< "Base: " << getBase() << endl
+		<< "Hauteur: " << getHauteur() << endl;
 }
