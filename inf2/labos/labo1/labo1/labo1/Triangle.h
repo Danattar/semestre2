@@ -1,3 +1,17 @@
+/*
+-----------------------------------------------------------------------------------
+Laboratoire	: 01 - Class
+Fichier		: Triangle.h
+Auteur(s)	: Frédéric Korradi et Adrien Barth
+Date		: 22.02.2017
+
+But			: Mettre a disposition une classe triangle.
+
+Remarque(s) :	---
+
+Compilateur : MinGW-g++ 4.8.1
+-----------------------------------------------------------------------------------
+*/
 #ifndef TRIANGLE_H
 #define TRIANGLE_H
 

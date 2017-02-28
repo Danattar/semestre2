@@ -1,3 +1,17 @@
+/*
+-----------------------------------------------------------------------------------
+Laboratoire	: 01 - Class
+Fichier		: Rectangle.cpp
+Auteur(s)	: Frédéric Korradi et Adrien Barth
+Date		: 22.02.2017
+
+But			: Mettre a disposition les fonctions membres de la classe Triangle.
+
+Remarque(s) :	---
+
+Compilateur : MinGW-g++ 4.8.1
+-----------------------------------------------------------------------------------
+*/
 #include "Triangle.h"
 #include <iostream>
 

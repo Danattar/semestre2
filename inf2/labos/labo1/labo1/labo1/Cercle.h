@@ -1,3 +1,17 @@
+/*
+-----------------------------------------------------------------------------------
+Laboratoire	: 01 - Class
+Fichier		: Cercle.h
+Auteur(s)	: Frédéric Korradi et Adrien Barth
+Date		: 22.02.2017
+
+But			: Mettre a disposition une classe cercle.
+
+Remarque(s) :	---
+
+Compilateur : MinGW-g++ 4.8.1
+-----------------------------------------------------------------------------------
+*/
 #ifndef CERCLE_H
 #define CERCLE_H
 
