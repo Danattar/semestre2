@@ -15,7 +15,7 @@ Compilateur : MinGW-g++ 4.8.1
 */
 #ifndef DATE_H
 #define DATE_H
-
+#include <string>
 
 enum class Mois {
 	JANVIER, FEVRIER, MARS, AVRIL,
@@ -23,7 +23,13 @@ enum class Mois {
 	OCTOBRE, NOVEMBRE, DECEMBRE
 };
 
+class Date;
+
+std::ostream& operator << (std::ostream&, const Date&);
+std::istream& operator >> (std::istream& os, const Date&);
 class Date {
+	friend std::ostream& operator << (std::ostream&, const Date&);
+	friend std::istream& operator >> (std::istream&, const Date&);
 public:
 	
 	Date();
@@ -45,6 +51,10 @@ private:
 	long long annee;
 	//TODO gestion de dateValide...
 	bool dateValide = 1;
+	const std::string MOIS[12] = { "janvier", "fevrier", "mars", "avril", "mais", "juin",
+		"juillet", "aout", "septembre", "octobre", "novembre",
+		"decembre" }; //obligé de mettre la taille de l'array, sinon erreur lors de la
+					  //déclaration de l'attribut naissance dans la classe Personne.h
 };
 
 #endif

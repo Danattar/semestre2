@@ -16,20 +16,25 @@ Compilateur : MinGW-g++ 4.8.1
 #define ADRESSE_H
 #include <string>
 
+class Adresse;
+
+std::ostream& operator << (std::ostream&, const Adresse&);
 
 class Adresse {
+
+	friend std::ostream& operator << (std::ostream&, const Adresse&);
 public:
-	Adresse(std::string rue, std::string no, std::string npa, std::string ville, std::string pays); //TODO: propriétés optionnelles
-	void setRue(std::string rue);
-	void setNo(std::string no);
-	void setNpa(std::string npa);
-	void setVille(std::string ville);
-	void setPays(std::string pays);
-	std::string getRue();
-	std::string getNo();
-	std::string getNpa();
-	std::string getVille();
-	std::string getPays();
+	Adresse( const std::string&,  const std::string&,  const std::string&,  const std::string&,  const std::string&); //TODO: propriétés optionnelles
+	void setRue( const std::string&);
+	void setNo( const std::string&);
+	void setNpa(const std::string&);
+	void setVille(const std::string&);
+	void setPays(const std::string&);
+	std::string getRue() const;
+	std::string getNo() const;
+	std::string getNpa() const;
+	std::string getVille() const;
+	std::string getPays() const;
 
 
 private:

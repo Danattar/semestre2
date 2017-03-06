@@ -18,23 +18,29 @@ Compilateur : MinGW-g++ 4.8.1
 #include "Date.h"
 #include "Adresse.h"
 
+class Personne;
 
+
+std::ostream& operator << (std::ostream&, const Personne&);
 
 class Personne {
+	friend std::ostream& operator << (std::ostream&, const Personne&);
 public:
-	Personne(std::string nom, std::string prenom, Date naissance, std::string employeurNom, 
+	Personne(std::string nom, std::string prenom, Date naissance,std::string npa, std::string employeurNom, 
 			 Adresse employeurAdresse, unsigned int salaireAnnuel);
 	//TODO: parametres optionnels.
 	//TODO: operateurs de flux.
 	void setPrenom(std::string prenom);
 	void setNom(std::string nom);
 	void setNaissance(Date naissance);
+	void setNpa(std::string npa);
 	void setEmployeurNom(std::string employeurNom);
 	void setEmployeurAdresse(Adresse employeurAdresse);
 	void setSalaireAnnuel(unsigned int salaireAnnuel);
 	std::string getPrenom();
 	std::string getNom();
 	Date getNaissance();
+	std::string getNpa();
 	std::string getEmployeurNom();
 	Adresse getEmployeurAdresse();
 	unsigned int getSalaireAnnuel();
@@ -42,6 +48,7 @@ private:
 	std::string prenom;
 	std::string nom;
 	Date naissance;
+	std::string npa;
 	std::string employeurNom;
 	Adresse employeurAdresse;
 	unsigned int salaireAnnuel;

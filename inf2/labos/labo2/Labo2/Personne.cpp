@@ -15,11 +15,18 @@ Compilateur : MinGW-g++ 4.8.1
 #include "Personne.h"
 using namespace std;
 
-Personne::Personne(string nom, string prenom, Date naissance, string employeurNom,
+Personne::Personne(string nom, string prenom, Date naissance, string npa, string employeurNom,
 	Adresse employeurAdresse, unsigned int salaireAnnuel)
-	:nom(nom), prenom(prenom), naissance(naissance), employeurNom(employeurNom),
+	:nom(nom), prenom(prenom), naissance(naissance),npa(npa), employeurNom(employeurNom),
 	employeurAdresse(employeurAdresse), salaireAnnuel(salaireAnnuel)
 {
+}
+
+ostream& operator << (ostream& os, const Personne& p) 
+{
+	os << p.nom << " " << p.prenom << " " << p.naissance << " " << p.employeurNom
+	   << " " << p.employeurAdresse << " " << " " << p.salaireAnnuel;
+	return os;
 }
 
 void Personne::setPrenom(string prenom)
@@ -34,7 +41,12 @@ void Personne::setNom(string nom)
 
 void Personne::setNaissance(Date naissance)
 {
-	this->naissance = naissance;
+	//this->naissance = ((naissance.getJour), naissance.getMois, naissance.getAnnee);
+}
+
+void Personne::setNpa(string npa)
+{
+	this->npa = npa;
 }
 
 void Personne::setEmployeurNom(string employeurNom)
@@ -67,6 +79,11 @@ Date Personne::getNaissance()
 	return naissance;
 }
 
+string Personne::getNpa()
+{
+	return npa;
+}
+
 string Personne::getEmployeurNom()
 {
 	return employeurNom;
@@ -81,3 +98,4 @@ unsigned int Personne::getSalaireAnnuel()
 {
 	return salaireAnnuel;
 }
+

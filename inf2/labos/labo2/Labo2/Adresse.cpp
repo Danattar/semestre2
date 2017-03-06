@@ -13,59 +13,68 @@ Remarque(s) :	---
 Compilateur : MinGW-g++ 4.8.1
 -----------------------------------------------------------------------------------
 */
+#include "Adresse.h"
 using namespace std;
 
-Adresse::Adresse(string rue, string no, string npa, string ville, string pays)
+Adresse::Adresse(const std::string& rue, const std::string& no, 
+	const std::string& npa, const std::string& ville, const std::string& pays)
 	:rue(rue), no(no), npa(npa),ville(ville),pays(pays)
 {
 }
 
-void Adresse::setRue(string rue)
+
+ostream& operator << (ostream& os, const Adresse& adresse) {
+	os << adresse.rue << " " << adresse.no << ", " << adresse.npa << " " << adresse.ville << ", " << adresse.pays;
+	return os;
+}
+void Adresse::setRue(const string& rue)
 {
 	this->rue = rue;
 }
 
-void Adresse::setNo(string no)
+void Adresse::setNo(const string& no)
 {
 	this->no = no;
 }
 
-void Adresse::setNpa(string npa)
+void Adresse::setNpa(const string& npa)
 {
 	this->npa = npa;
 }
 
-void Adresse::setVille(string ville)
+void Adresse::setVille(const string& ville)
 {
 	this->ville = ville;
 }
 
-void Adresse::setPays(string pays)
+void Adresse::setPays(const string& pays)
 {
 	this->pays = pays;
 }
 
-string Adresse::getRue()
+string Adresse::getRue() const
 {
 	return rue;
 }
 
-string Adresse::getNo()
+string Adresse::getNo() const
 {
 	return no;
 }
 
-string Adresse::getNpa()
+string Adresse::getNpa() const
 {
 	return npa;
 }
 
-string Adresse::getVille()
+string Adresse::getVille() const
 {
 	return ville;
 }
 
-string Adresse::getPays()
+string Adresse::getPays() const
 {
 	return pays;
 }
+
+

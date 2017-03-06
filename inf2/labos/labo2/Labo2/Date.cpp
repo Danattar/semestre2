@@ -13,12 +13,32 @@ Compilateur : MinGW-g++ 4.8.1
 -----------------------------------------------------------------------------------
 */
 #include "Date.h"
+#include <iostream>
 
 using namespace std;
 
 Date::Date()
 	:jour(1), mois(Mois::JANVIER), annee(1900)
 {}
+
+ostream& operator << (ostream& os, const Date& date)
+{
+	
+	os << date.jour << "-" << date.MOIS[(int)date.mois]<< "-" << date.annee;
+	return os;
+}
+istream& operator >> (istream& is, const Date& date) 
+{
+	string resultat;
+	cout << "saisir jour : ";
+	cin >> date.setJour;
+	cout << endl << "saisir mois: ";
+	cin >> date.setMois;
+	cout << endl << "saisir annee";
+	cin >> date.setAnnee;
+	return is;
+}
+
 Date::Date(short jour, Mois mois, long long annee)
 	:jour(jour), mois(mois), annee(annee)
 {}
@@ -48,3 +68,4 @@ long long Date::getAnnee() {
 bool Date::getValid() {
 	return dateValide;
 }
+
