@@ -14,10 +14,15 @@ Compilateur : MinGW-g++ 4.8.1
 -----------------------------------------------------------------------------------
 */
 #include "Adresse.h"
+#include <iostream>
 using namespace std;
 
-Adresse::Adresse(const std::string& rue, const std::string& no, 
-	const std::string& npa, const std::string& ville, const std::string& pays)
+Adresse::Adresse()
+{
+}
+
+Adresse::Adresse(const std::string& npa, const std::string& ville,
+	const std::string& pays, const std::string& rue = "", const std::string& no = "")
 	:rue(rue), no(no), npa(npa),ville(ville),pays(pays)
 {
 }
@@ -26,6 +31,21 @@ Adresse::Adresse(const std::string& rue, const std::string& no,
 ostream& operator << (ostream& os, const Adresse& adresse) {
 	os << adresse.rue << " " << adresse.no << ", " << adresse.npa << " " << adresse.ville << ", " << adresse.pays;
 	return os;
+}
+istream& operator >> (istream& is, Adresse& a)
+{
+
+	cout << "Rue [optionnel] : ";
+	is >> a.rue;
+	cout << "Numero [optionnel] : ";
+	is >> a.no;
+	cout << "NPA : ";
+	is >> a.npa;
+	cout << "Ville : ";
+	is >> a.ville;
+	cout << "Pays : ";
+	is >> a.pays;
+	return is;
 }
 void Adresse::setRue(const string& rue)
 {

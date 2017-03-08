@@ -25,30 +25,40 @@ int main() {
 	vP personnes;
 	Date naissance((short)22, (Mois) 2, (long long) 2000);
 	Adresse employeurAdresse((string)"maison hantee", (string)"13", (string)"6666", (string)"HanteVille", (string)"Suisse");
-	Personne personne((string)"Marcel-Jean", (string)"Jean", naissance,(string)"9999", (string)"Borris Leutard", employeurAdresse, (unsigned int)10000000);
+	Personne personne((string)"Marcel-Jean", (string)"Jean", naissance,employeurAdresse,1, (string)"Borris Leutard", employeurAdresse, (unsigned int)10000000);
 	personnes.push_back(personne);
 
 	Date naissance2((short)23, (Mois)4, (long long)1905);
 	Adresse employeurAdresse2((string)"maison hantee2", (string)"123", (string)"66266", (string)"HanteVille2", (string)"Suisse2");
-	Personne personne2((string)"Marcel2-Jean", (string)"Jean2", naissance, (string)"99992", (string)"2Borris Leutard", employeurAdresse, (unsigned int)250);
+	Personne personne2((string)"Marcel2-Jean", (string)"Jean2", naissance, employeurAdresse,1, (string)"2Borris Leutard", employeurAdresse, (unsigned int)250);
 	personnes.push_back(personne2);
 	
+	Personne personne3;
+	cin >> personne3;
+	personnes.push_back(personne3);
+
+
 	for each (Personne p in personnes) {
 		cout << p << endl;
 	}
 	for each(Personne p in personnes) {
-		/*if (p.getEmployeurNom) {
-			cout << p << endl;
-		}*/
-	}
-	cout << "Saissiez un NPA a rechercher : ";
-	string npaSearched;
-	cin >> npaSearched;
-	for each(Personne p in personnes) {
-		if ((p.getNpa).compare(npaSearched)) {
-			cout << p << endl;
+		if (p.getIsEmployee()) {
+			cout << p.getNom() << " " << p.getPrenom() << endl;
 		}
 	}
+	cout << endl << "Saissiez un NPA a rechercher : ";
+	string npaSearched;
+	cin >> npaSearched;
+	cout << "Personnes habitant au NPA : " << npaSearched << endl;
+	cout << "--------------------------" << endl;
+	for each(Personne p in personnes) {
+		if (!((p.getAdresse().getNpa()).compare(npaSearched)))
+		{
+			cout << "- " << p << endl;
+		}
+	}
+	cout << "-------------------------" << endl;
+	cout << endl;
 	cout << "Please press enter to end program...";
 	cin.get();
 	return EXIT_SUCCESS;

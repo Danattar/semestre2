@@ -22,33 +22,40 @@ class Personne;
 
 
 std::ostream& operator << (std::ostream&, const Personne&);
+std::istream& operator >> (std::istream&, Personne&);
 
 class Personne {
 	friend std::ostream& operator << (std::ostream&, const Personne&);
+	friend std::istream& operator >> (std::istream&, Personne&);
 public:
-	Personne(std::string nom, std::string prenom, Date naissance,std::string npa, std::string employeurNom, 
-			 Adresse employeurAdresse, unsigned int salaireAnnuel);
+	Personne();
+	Personne(const std::string&, const std::string&, const Date&,
+			const Adresse&, const bool&, const std::string&,
+			 const Adresse&, const unsigned int&);
 	//TODO: parametres optionnels.
 	//TODO: operateurs de flux.
-	void setPrenom(std::string prenom);
-	void setNom(std::string nom);
-	void setNaissance(Date naissance);
-	void setNpa(std::string npa);
-	void setEmployeurNom(std::string employeurNom);
-	void setEmployeurAdresse(Adresse employeurAdresse);
-	void setSalaireAnnuel(unsigned int salaireAnnuel);
-	std::string getPrenom();
-	std::string getNom();
-	Date getNaissance();
-	std::string getNpa();
-	std::string getEmployeurNom();
-	Adresse getEmployeurAdresse();
-	unsigned int getSalaireAnnuel();
+	void setPrenom(const std::string&);
+	void setNom(const std::string&);
+	void setNaissance(const Date&);
+	void setAdresse(const Adresse&);
+	void setIsEmployee(const bool&);
+	void setEmployeurNom(const std::string&);
+	void setEmployeurAdresse(const Adresse&);
+	void setSalaireAnnuel(const unsigned int&);
+	std::string getPrenom() const;
+	std::string getNom() const;
+	Date getNaissance() const;
+	Adresse getAdresse() const;
+	bool getIsEmployee();
+	std::string getEmployeurNom() const;
+	Adresse getEmployeurAdresse() const;
+	unsigned int getSalaireAnnuel() const;
 private:
 	std::string prenom;
 	std::string nom;
 	Date naissance;
-	std::string npa;
+	Adresse adresse;
+	bool isEmployee;
 	std::string employeurNom;
 	Adresse employeurAdresse;
 	unsigned int salaireAnnuel;

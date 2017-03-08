@@ -26,23 +26,25 @@ enum class Mois {
 class Date;
 
 std::ostream& operator << (std::ostream&, const Date&);
-std::istream& operator >> (std::istream& os, const Date&);
+std::istream& operator >> (std::istream& os, Date&);
+std::istream& operator >> (std::istream& os, Mois&);
 class Date {
 	friend std::ostream& operator << (std::ostream&, const Date&);
-	friend std::istream& operator >> (std::istream&, const Date&);
+	friend std::istream& operator >> (std::istream&, Date&);
+	friend std::istream& operator >> (std::istream&, Mois&);
 public:
 	
 	Date();
 	
 	Date(short jour, Mois mois, long long annee);
-	void setJour(unsigned short jour);
-	void setMois(Mois mois);
-	void setAnnee(long long annee);
-	void setDate(short jour, Mois mois, long long annee);
-	short getJour();
-	Mois getMois();
-	long long getAnnee();
-	bool getValid();
+	void setJour(const unsigned short& jour);
+	void setMois(const Mois& mois);
+	void setAnnee(const long long& annee);
+	void setDate(const short& jour, const Mois& mois, const long long& annee);
+	short getJour() const;
+	Mois getMois() const;
+	long long getAnnee()  const;
+	bool getValid() const;
 
 	//TODO Operateurs de flux
 private:
