@@ -1,24 +1,62 @@
+/*
+-----------------------------------------------------------------------------------
+Laboratoire	: 02 - Personnes
+Fichier		: utilities.h
+Auteur(s)	: Frédéric Korradi et Adrien Barth
+Date		: 28.02.2017
+
+But			: Fonctions permettant d'effectuer des saisies utilisateurs.
+
+Remarque(s) :	---
+
+Compilateur : MinGW-g++ 4.8.1
+-----------------------------------------------------------------------------------
+*/
+
 #ifndef UTILITIES_CPP
 #define UTILITIES_CPP
+
 #include <iostream>
 #include <string>
+
 using namespace std;
 
-bool inRange(int value, int min, int max) {
-	return (value >= min && value <= max ? true : false);
+int lireInt(int min, int max, const string message, const string erreur) {
+
+	if (min > max) {
+		int tmp = min;
+		min = max;
+		max = tmp;
+	}
+
+	int nombre;
+
+	while (true) {
+		cout << message;
+		cin >> nombre;
+		
+		cin.clear();
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');
+		cin.sync();
+
+		if (nombre < min || max < nombre) {
+			cout << erreur << endl;
+		}
+		else {
+			return nombre;
+		}
+	}
 }
 
-int getInput(const string& MESSAGE, int max, int min) {
-	int value = 0;
-	cout << MESSAGE;
+string lireString(const string message) {
+	string saisie;
+	
+	do {
+		cout << message;
+		getline(cin, saisie);
+	} while (saisie.empty());
 
-	while (!(cin >> value) || !(inRange(value, min, max))) {
-		cin.clear();
-		cin.ignore(numeric_limits<int>::max(), '\n');
-		cout << MESSAGE;
-	}
-	cin.ignore(numeric_limits<int>::max(), '\n');
-	return value;
+	return saisie;
 }
 
 #endif // !UTILITIES_CPP

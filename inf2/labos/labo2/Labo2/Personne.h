@@ -5,21 +5,22 @@ Fichier		: Personne.h
 Auteur(s)	: Frédéric Korradi et Adrien Barth
 Date		: 28.02.2017
 
-But			: TODO
+But			: Fichier de définition pour Personne.cpp
 
 Remarque(s) :	---
 
 Compilateur : MinGW-g++ 4.8.1
 -----------------------------------------------------------------------------------
 */
+
 #ifndef PERSONNE_H
 #define PERSONNE_H
+
 #include <string>
 #include "Date.h"
 #include "Adresse.h"
 
 class Personne;
-
 
 std::ostream& operator << (std::ostream&, const Personne&);
 std::istream& operator >> (std::istream&, Personne&);
@@ -27,13 +28,12 @@ std::istream& operator >> (std::istream&, Personne&);
 class Personne {
 	friend std::ostream& operator << (std::ostream&, const Personne&);
 	friend std::istream& operator >> (std::istream&, Personne&);
+
 public:
 	Personne();
 	Personne(const std::string&, const std::string&, const Date&,
 			const Adresse&, const bool&, const std::string&,
 			 const Adresse&, const unsigned int&);
-	//TODO: parametres optionnels.
-	//TODO: operateurs de flux.
 	void setPrenom(const std::string&);
 	void setNom(const std::string&);
 	void setNaissance(const Date&);
@@ -50,6 +50,7 @@ public:
 	std::string getEmployeurNom() const;
 	Adresse getEmployeurAdresse() const;
 	unsigned int getSalaireAnnuel() const;
+
 private:
 	std::string prenom;
 	std::string nom;

@@ -5,13 +5,20 @@ Fichier		: main.cpp
 Auteur(s)	: Frédéric Korradi et Adrien Barth
 Date		: 28.02.2017
 
-But			: TODO
+But			: Programme principal qui permet de tester les classes Personne, Adresse
+			  et Date du laboratoire 2. La création de personne via des données
+			  ainsi que celle via une saisie utilisateur est testée. Ce programme
+			  va également afficher toutes les informations des personnes saisies,
+			  les noms et prénoms des personnes possédant un emploi et celles
+			  dont l'attribut npa de l'adresse de la personne correspondant à une
+			  valeur saisie par l'utilisateur.
 
 Remarque(s) :	---
 
 Compilateur : MinGW-g++ 4.8.1
 -----------------------------------------------------------------------------------
 */
+
 #include <iostream>
 #include <string>
 #include <vector>
@@ -21,49 +28,54 @@ Compilateur : MinGW-g++ 4.8.1
 
 using namespace std;
 using vP = vector<Personne>;
+
 int main() {
 	vP personnes;
 	Date naissance((short)22, (Mois) 2, (long long) 2000);
-	Adresse employeurAdresse((string)"maison hantee", (string)"13", (string)"6666", (string)"HanteVille", (string)"Suisse");
-	Personne personne((string)"Marcel-Jean", (string)"Jean", naissance,employeurAdresse,1, (string)"Borris Leutard", employeurAdresse, (unsigned int)10000000);
+	Adresse employeurAdresse(
+		"6666", "Hante-Ville", "Danemark",
+		"Route de Cheseaux", "18b");
+	Personne personne(
+		"Marcel-Jean", "Jean", naissance, employeurAdresse, true,
+		"Borris Leutard", employeurAdresse, 10000000);
 	personnes.push_back(personne);
 
 	Date naissance2((short)23, (Mois)4, (long long)1905);
-	Adresse employeurAdresse2((string)"maison hantee2", (string)"123", (string)"66266", (string)"HanteVille2", (string)"Suisse2");
-	Personne personne2((string)"Marcel2-Jean", (string)"Jean2", naissance, employeurAdresse,1, (string)"2Borris Leutard", employeurAdresse, (unsigned int)250);
+	Adresse employeurAdresse2(
+		"18950", "Amsterdam", "Pays-Bas",
+		"Place de la Gare", "1");
+	Personne personne2("Marcel-Jean", "Marie", naissance,
+		employeurAdresse, true, "Borris Leutard", employeurAdresse, 250);
 	personnes.push_back(personne2);
 	
 	Personne personne3;
 	cin >> personne3;
 	personnes.push_back(personne3);
 
-
-	for each (Personne p in personnes) {
+	for (Personne p : personnes) {
 		cout << p << endl;
 	}
-	for each(Personne p in personnes) {
+
+	for (Personne p : personnes) {
 		if (p.getIsEmployee()) {
 			cout << p.getNom() << " " << p.getPrenom() << endl;
 		}
 	}
+
 	cout << endl << "Saissiez un NPA a rechercher : ";
 	string npaSearched;
-	cin >> npaSearched;
+	getline(cin, npaSearched);
 	cout << "Personnes habitant au NPA : " << npaSearched << endl;
-	cout << "--------------------------" << endl;
-	for each(Personne p in personnes) {
-		if (!((p.getAdresse().getNpa()).compare(npaSearched)))
-		{
+	cout << "-------------------------" << endl;
+
+	for (Personne p : personnes) {
+		if (!((p.getAdresse().getNpa()).compare(npaSearched))) {
 			cout << "- " << p << endl;
 		}
 	}
-	cout << "-------------------------" << endl;
-	cout << endl;
-	cout << "Please press enter to end program...";
+	cout << "-------------------------" << endl << endl;
+
+	cout << "Appuyez sur une touche pour continuer...";
 	cin.get();
 	return EXIT_SUCCESS;
 }
-
-
-// pour les propriétés optionnelles, setter a null. L'adresse, créer un objet avec des string vides, la date, constructeur par défault (1.1.1900). 
-// A l'affichage, ne pas afficher les valeurs null, l'adresse avec string vides et les dates avec valeur par défault.
