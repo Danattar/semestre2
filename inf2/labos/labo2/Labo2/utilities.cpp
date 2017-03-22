@@ -13,9 +13,8 @@ Compilateur : MinGW-g++ 4.8.1
 -----------------------------------------------------------------------------------
 */
 
-#ifndef UTILITIES_CPP
-#define UTILITIES_CPP
 
+#include "utilities.h"
 #include <iostream>
 #include <string>
 
@@ -58,5 +57,3 @@ string lireString(const string message) {
 
 	return saisie;
 }
-
-#endif // !UTILITIES_CPP

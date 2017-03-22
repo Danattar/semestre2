@@ -19,9 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{7B400CD1-158C-42BB-A3D5-A282F028D2B2}</ProjectGuid>
+    <ProjectGuid>{816FCB68-A620-4B31-9FA2-0B230CA92328}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>Exe712</RootNamespace>
+    <RootNamespace>labo4</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -142,11 +142,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <Text Include="ReadMe.txt" />
+    <ClCompile Include="..\Collection.cpp" />
+    <ClCompile Include="..\Date.cpp" />
+    <ClCompile Include="..\Labo_04_Otto_Korradi.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source.cpp" />
-    <ClCompile Include="Source1.cpp" />
+    <ClInclude Include="..\Collection.h" />
+    <ClInclude Include="..\Date.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

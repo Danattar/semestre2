@@ -30,6 +30,9 @@ using namespace std;
 using vP = vector<Personne>;
 
 int main() {
+
+	Date d1, d2;
+	d1 = d2;
 	vP personnes;
 	Date naissance((short)22, (Mois) 2, (long long) 2000);
 	Adresse employeurAdresse(

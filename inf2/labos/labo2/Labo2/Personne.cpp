@@ -99,6 +99,7 @@ void Personne::setNaissance(const Date& naissance) {
 	this->naissance.setJour(naissance.getJour());
 	this->naissance.setAnnee(naissance.getAnnee());
 	this->naissance.setMois(naissance.getMois());
+	//this->naissance = naissance;
 }
 
 void Personne::setAdresse(const Adresse& adresse) {

@@ -18,10 +18,7 @@ Compilateur : MinGW-g++ 4.8.1
 
 #include <string>
 
-class Adresse;
 
-std::ostream& operator << (std::ostream&, const Adresse&);
-std::istream& operator >> (std::istream&, Adresse&);
 
 class Adresse {
 	friend std::ostream& operator << (std::ostream&, const Adresse&);

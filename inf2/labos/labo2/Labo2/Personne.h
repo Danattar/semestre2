@@ -20,10 +20,6 @@ Compilateur : MinGW-g++ 4.8.1
 #include "Date.h"
 #include "Adresse.h"
 
-class Personne;
-
-std::ostream& operator << (std::ostream&, const Personne&);
-std::istream& operator >> (std::istream&, Personne&);
 
 class Personne {
 	friend std::ostream& operator << (std::ostream&, const Personne&);

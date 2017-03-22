@@ -13,22 +13,24 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Source Files\8.8">
-      <UniqueIdentifier>{933a5a89-9ba6-4920-b44e-d2f3276829f6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\8.9">
-      <UniqueIdentifier>{ebe8f96e-723f-40ba-a353-4cb93edf7b8f}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="ReadMe.txt" />
+    <ClCompile Include="..\Collection.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Date.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Labo_04_Otto_Korradi.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source.cpp">
-      <Filter>Source Files\8.9</Filter>
-    </ClCompile>
-    <ClCompile Include="Source1.cpp">
-      <Filter>Source Files\8.8</Filter>
-    </ClCompile>
+    <ClInclude Include="..\Collection.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Date.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
